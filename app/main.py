@@ -3,9 +3,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from .library.helpers import *
-from app.routers import twoforms, unsplash, accordion
-
+from app.library.helpers import openfile
+from app.routers import accordion, twoforms, unsplash
 
 app = FastAPI()
 
@@ -21,11 +20,19 @@ app.include_router(accordion.router)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    data = openfile("home.md")
-    return templates.TemplateResponse("page.html", {"request": request, "data": data})
+    """Return html for home page."""
+    file_data = openfile("home.md")
+    return templates.TemplateResponse(
+        "page.html",
+        {"request": request, "data": file_data},
+    )
 
 
 @app.get("/page/{page_name}", response_class=HTMLResponse)
 async def show_page(request: Request, page_name: str):
-    data = openfile(page_name+".md")
-    return templates.TemplateResponse("page.html", {"request": request, "data": data})
+    """Return html for page identified by  page_name."""
+    file_data = openfile("{0}.md".format(page_name))
+    return templates.TemplateResponse(
+        "page.html",
+        {"request": request, "data": file_data},
+    )
