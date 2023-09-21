@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "ssws"
+version = "0.1.0-dev0"
+description = "Simple static web starter project using fastapi."
+authors = ["Quien Sabe <qs5579@mail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+fastapi = "^0.103.1"
+uvicorn = "^0.23.2"
+python-dotenv = "^1.0.0"
+aiofiles = "^23.2.1"
+python-multipart = "^0.0.6"
+jinja2 = "^3.1.2"
+markdown = "^3.4.4"
+types-markdown = "^3.4.2.10"
+loguru = "^0.7.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+flake8 = "^6.1.0"
+black = "^23.9.1"
+isort = "^5.12.0"
+mypy = "^1.5.1"
+safety = "^2.3.5"
+wemake-python-styleguide = "^0.18.0"
+flake8-pytest-style = "^1.7.2"
+doc8 = "^1.1.1"
+httpx = "^0.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
