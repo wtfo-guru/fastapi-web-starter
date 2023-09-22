@@ -29,13 +29,14 @@ package:
 	poetry run pip check
 	poetry run safety check --full-report
 
-test: lint package unit
+test: lint package unit reqs
 
 deploy:
 	git push dokku main:main
 
 reqs:
-	toml-to-req --toml-file pyproject.toml --include-optional --optional-lists test
+	poetry export -f requirements.txt --without=test -o requirements.txt --without-hashes
+	poetry export -f requirements.txt --only=test -o requirements_dev.txt --without-hashes
 
 chlog:
 	github_changelog_generator -u qs5779 -p fastapi-web-starter

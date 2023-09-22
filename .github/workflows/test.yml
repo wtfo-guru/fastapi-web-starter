@@ -17,14 +17,6 @@ permissions:
   contents: read
 
 jobs:
-  export-requirements-txt:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: divideprojects/poetry-export-requirements-action@v1
-      with:
-        without-hashes: true
-        outfile-name: requirements.txt
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -56,7 +48,7 @@ jobs:
       run: poetry run pip --version >/dev/null 2>&1 || rm -rf .venv
 
     - name: Install dependencies
-      run: poetry install --no-interaction
+      run: poetry install --no-interaction --with=test
 
     - name: Run checks
       run: make test
