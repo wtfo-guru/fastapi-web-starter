@@ -31,6 +31,9 @@ package:
 
 test: lint package unit
 
+deploy: test
+	git push dokku main:main
+
 chlog:
 	github_changelog_generator -u qs5779 -p fastapi-web-starter
 	sed -i -e '/^$$/N;/^\n$$/D' ./CHANGELOG.md
