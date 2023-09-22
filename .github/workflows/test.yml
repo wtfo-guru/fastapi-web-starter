@@ -17,6 +17,14 @@ permissions:
   contents: read
 
 jobs:
+  export-requirements-txt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: divideprojects/poetry-export-requirements-action@v1
+      with:
+        without-hashes: true
+        outfile-name: requirements.txt
   build:
     runs-on: ubuntu-latest
     strategy:
