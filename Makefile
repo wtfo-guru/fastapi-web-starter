@@ -31,8 +31,11 @@ package:
 
 test: lint package unit
 
-deploy: test
+deploy:
 	git push dokku main:main
+
+reqs:
+	toml-to-req --toml-file pyproject.toml --include-optional --optional-lists test
 
 chlog:
 	github_changelog_generator -u qs5779 -p fastapi-web-starter
