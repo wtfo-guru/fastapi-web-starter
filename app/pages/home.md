@@ -12,22 +12,39 @@ This project uses <a href="https://fastapi.tiangolo.com/">FastAPI</a>, <a href="
 <h2>Updated</h2>
 
 
-2021-08-15
+2023-09-23
 
 ## Python environment
 
-3.9.6
+3.10.13
 
 ## Requirements
 
-```sh
-requests==2.26.0
-fastapi==0.70.0
-uvicorn==0.15.0
-python-dotenv==0.19.1
-aiofiles==0.7.0
-python-multipart==0.0.5
-jinja2==3.0.2
-Markdown==3.3.4
-pytest==6.2.5
+``` sh
+aiofiles==23.2.1
+annotated-types==0.5.0
+anyio==3.7.1
+certifi==2023.7.22
+charset-normalizer==3.2.0
+click==8.1.7
+colorama==0.4.6 and (sys_platform == "win32" or platform_system == "Windows")
+exceptiongroup==1.1.3 ; python_version >= "3.10" and python_version < "3.11"
+fastapi==0.103.1
+h11==0.14.0
+idna==3.4
+jinja2==3.1.2
+loguru==0.7.2
+markdown==3.4.4
+markupsafe==2.1.3
+pydantic-core==2.6.3
+pydantic==2.3.0
+python-dotenv==1.0.0
+python-multipart==0.0.6
+requests==2.31.0
+sniffio==1.3.0
+starlette==0.27.0
+typing-extensions==4.8.0
+urllib3==2.0.5
+uvicorn==0.23.2
+win32-setctime==1.1.0 and sys_platform == "win32"
 ```
