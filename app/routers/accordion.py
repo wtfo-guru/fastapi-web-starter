@@ -1,3 +1,5 @@
+from typing import Annotated
+
 from fastapi import APIRouter, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -28,7 +30,7 @@ def get_accordion(request: Request):
 
 
 @router.post("/accordion", response_class=HTMLResponse)
-def post_accordion(request: Request, tag: str = Form(...)):  # noqa: B008 WPS404
+def post_accordion(request: Request, tag: Annotated[str, Form()]):
     """Handle post for accordion page.
 
     Parameters

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ssws"
-version = "0.1.0"
+version = "0.1.1"
 description = "Simple static web starter project using fastapi."
 authors = ["Quien Sabe <qs5579@mail.com>"]
 license = "MIT"

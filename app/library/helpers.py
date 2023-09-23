@@ -9,5 +9,5 @@ def openfile(filename: str) -> dict[str, str]:
     with open(filepath, "r", encoding="utf-8") as input_file:
         text = input_file.read()
 
-    html = markdown.markdown(text)
+    html = markdown.markdown(text, extensions=['fenced_code'])
     return {"text": html}

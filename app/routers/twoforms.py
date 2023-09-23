@@ -1,4 +1,5 @@
 import os
+from typing import Annotated
 
 from fastapi import APIRouter, Form, Request
 from fastapi.responses import HTMLResponse
@@ -32,7 +33,7 @@ def form_get(request: Request):
 
 
 @router.post("/form1", response_class=HTMLResponse)
-def form_post1(request: Request, number: int = Form(...)):  # noqa: B008 WPS404
+def form_post1(request: Request, number: Annotated[int, Form()]):
     """Return form1 post result.
 
     Parameters
@@ -54,7 +55,7 @@ def form_post1(request: Request, number: int = Form(...)):  # noqa: B008 WPS404
 
 
 @router.post("/form2", response_class=HTMLResponse)
-def form_post2(request: Request, number: int = Form(...)):  # noqa: B008 WPS404
+def form_post2(request: Request, number: Annotated[int, Form()]):
     """Return form2 post result.
 
     Parameters
